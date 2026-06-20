@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Concrete Restoration South Florida | Seacoast Construction</title>
     <meta name="description" content="Professional concrete restoration, waterproofing, and protective coatings in South Florida. 25+ years experience. Licensed & insured. Free consultation.">
@@ -69,9 +70,9 @@ header {
 position: sticky;
 top: 0;
 z-index: 1000;
-background-color: var(--navy);
-color: var(--white);
-padding: 1rem 2rem;
+background-color: var(--white);
+padding: 0;
+border-bottom: 3px solid var(--blue);
 }
 .header-inner {
 display: flex;
@@ -79,11 +80,14 @@ justify-content: space-between;
 align-items: center;
 max-width: 1200px;
 margin: 0 auto;
+padding: 1rem 2rem;
 }
 .logo {
-font-size: 1.5rem;
-font-weight: bold;
-color: var(--white);
+font-size: 1.1rem;
+font-weight: 700;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(--navy);
 }
 nav {
 display: flex;
@@ -96,31 +100,49 @@ list-style: none;
 gap: 1.5rem;
 }
 .nav-links a {
-color: var(--white);
-font-size: 0.9rem;
+color: var(--navy);
+font-size: 0.85rem;
+font-weight: 500;
 transition: color 0.3s;
+text-transform: uppercase;
+letter-spacing: 1px;
 }
 .nav-links a:hover {
 color: var(--blue);
 }
 .header-phone {
-color: var(--white);
-font-weight: bold;
+color: var(--navy);
+font-weight: 600;
+font-size: 0.9rem;
 white-space: nowrap;
 }
 .btn {
 display: inline-block;
 padding: 0.75rem 1.5rem;
 border-radius: 4px;
-font-weight: bold;
+font-weight: 600;
 cursor: pointer;
 transition: all 0.3s;
 text-align: center;
+font-size: 0.85rem;
+text-transform: uppercase;
+letter-spacing: 1px;
 }
 .btn-primary {
-background-color: var(--blue);
+background-color: var(--navy);
 color: var(--white);
-border: 2px solid var(--blue);
+}
+.btn-primary:hover {
+background-color: var(--blue);
+}
+.btn-secondary {
+background-color: transparent;
+color: var(--navy);
+border: 2px solid var(--navy);
+}
+.btn-secondary:hover {
+background-color: var(--navy);
+color: var(--white);
 }
 .btn-primary:hover {
 background-color: #1a6fd1;
@@ -139,7 +161,7 @@ color: var(--navy);
 display: none;
 font-size: 1.5rem;
 cursor: pointer;
-color: var(--white);
+color: var(--navy);
 }
 .nav-toggle {
 display: none;
@@ -216,6 +238,41 @@ flex-wrap: wrap;
 .hero {
 grid-template-columns: 1fr;
 min-height: auto;
+}
+.hero-panel {
+min-height: 50vh;
+padding: 3rem 2rem;
+}
+.hamburger {
+display: block;
+}
+.nav-links {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+right: 0;
+background: var(--white);
+flex-direction: column;
+padding: 1rem 2rem;
+gap: 1rem;
+border-bottom: 3px solid var(--blue);
+}
+.nav-toggle:checked~nav .nav-links {
+display: flex;
+}
+.header-phone {
+display: none;
+}
+.footer-grid {
+grid-template-columns: 1fr;
+}
+.error-404 {
+padding: 4rem 1rem;
+}
+.error-404 h1 {
+font-size: 2.5rem;
+}
 }
 .hero-panel {
 min-height: 50vh;
@@ -686,7 +743,56 @@ margin-bottom: 1rem;
 footer {
 background-color: var(--navy);
 color: var(--white);
-padding: 4rem 2rem 2rem;
+padding: 3rem 2rem 1.5rem;
+}
+.footer-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 2rem;
+max-width: 1200px;
+margin: 0 auto;
+}
+.footer-col h4 {
+margin-bottom: 1rem;
+font-size: 0.9rem;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+.footer-col p {
+opacity: 0.7;
+font-size: 0.85rem;
+line-height: 1.6;
+}
+.footer-links {
+list-style: none;
+}
+.footer-links li {
+margin-bottom: 0.4rem;
+}
+.footer-links a {
+opacity: 0.7;
+font-size: 0.85rem;
+transition: opacity 0.3s;
+}
+.footer-links a:hover {
+opacity: 1;
+}
+.footer-bottom {
+text-align: center;
+padding-top: 2rem;
+margin-top: 2rem;
+border-top: 1px solid rgba(255,255,255,0.1);
+}
+.footer-bottom p:first-child {
+font-size: 0.8rem;
+letter-spacing: 3px;
+text-transform: uppercase;
+margin-bottom: 0.5rem;
+opacity: 0.5;
+}
+.footer-bottom p:last-child {
+font-size: 0.75rem;
+opacity: 0.4;
 }
 .footer-grid {
 display: grid;
@@ -799,14 +905,12 @@ max-width: 1300px;
             <label for="nav-toggle" class="hamburger">&#9776;</label>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
                     <li><a href="concrete-restoration.html">Concrete Restoration</a></li>
                     <li><a href="waterproofing.html">Waterproofing</a></li>
                     <li><a href="stucco-repair.html">Stucco Repair</a></li>
                     <li><a href="protective-coatings.html">Protective Coatings</a></li>
                     <li><a href="balcony-restoration.html">Balcony Restoration</a></li>
                     <li><a href="painting.html">Painting</a></li>
-                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <a href="tel:+13054192231" class="header-phone">(305) 419-2231</a>
@@ -1152,7 +1256,8 @@ max-width: 1300px;
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Seacoast Construction. All rights reserved.</p>
+            <p>SEACOASTCONSTRUCTION SERVICES</p>
+            <p>&copy; 2026 Seacoast Construction Services. Licensed &amp; Insured.</p>
         </div>
     </footer>
 
