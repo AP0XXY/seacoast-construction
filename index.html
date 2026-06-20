@@ -13,7 +13,7 @@
         "name": "Seacoast Construction",
         "url": "https://seacoastconstruction.com",
         "description": "Southeast Florida concrete restoration, waterproofing, stucco repair, and protective coatings contractor",
-        "telephone": "(561) 555-0192",
+        "telephone": "(305) 419-2231",
         "email": "info@seacoastconstruction.com",
         "address": {
             "@type": "PostalAddress",
@@ -171,13 +171,11 @@ position: relative;
 z-index: 2;
 }
 .hero-residential {
-background: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&h=1200&fit=crop') center/cover;
+background: url('https://seacoast-construction.lovable.app/assets/residential-hero-D7daj7XE.jpg') center/cover;
 }
-<!-- SWAP: real photo of residential condo remodeling project -->
 .hero-commercial {
-background: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&h=1200&fit=crop') center/cover;
+background: url('https://seacoast-construction.lovable.app/assets/commercial-hero-B6RdVTN1.jpg') center/cover;
 }
-<!-- SWAP: real photo of commercial restoration project -->
 .hero-label {
 font-size: 0.75rem;
 letter-spacing: 3px;
@@ -226,7 +224,91 @@ padding: 3rem 2rem;
 }
 .services {
 padding: 5rem 2rem;
-background-color: var(--white);
+background-color: var(--light-gray);
+}
+.section-label {
+font-size: 0.75rem;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: var(--blue);
+display: block;
+margin-bottom: 0.5rem;
+}
+.services h2 {
+font-size: 2rem;
+margin-bottom: 3rem;
+color: var(--navy);
+}
+.capabilities-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 3rem;
+max-width: 1200px;
+margin: 0 auto;
+}
+.capability-division {
+background: var(--white);
+border-radius: 12px;
+padding: 2rem;
+box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.division-header {
+font-size: 1rem;
+color: var(--navy);
+margin-bottom: 1.5rem;
+padding-bottom: 0.75rem;
+border-bottom: 2px solid var(--light-gray);
+display: flex;
+align-items: center;
+gap: 0.5rem;
+}
+.div-tag {
+font-size: 0.7rem;
+letter-spacing: 2px;
+color: var(--blue);
+background: var(--light-gray);
+padding: 0.25rem 0.5rem;
+border-radius: 4px;
+}
+.capability-list {
+list-style: none;
+counter-reset: none;
+}
+.capability-list li {
+display: flex;
+align-items: flex-start;
+gap: 1rem;
+padding: 1rem 0;
+border-bottom: 1px solid var(--light-gray);
+}
+.capability-list li:last-child {
+border-bottom: none;
+}
+.cap-num {
+font-size: 1.5rem;
+font-weight: bold;
+color: var(--blue);
+opacity: 0.3;
+min-width: 2.5rem;
+flex-shrink: 0;
+}
+.cap-info h4 {
+color: var(--navy);
+margin-bottom: 0.25rem;
+font-size: 1rem;
+}
+.cap-info h4 a {
+color: var(--blue);
+}
+.cap-info p {
+color: #666;
+font-size: 0.9rem;
+margin: 0;
+}
+@media (min-width: 768px) {
+.capabilities-grid {
+grid-template-columns: 1fr 1fr;
+}
 }
 .services h2 {
 text-align: center;
@@ -727,7 +809,7 @@ max-width: 1300px;
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <a href="tel:+15615550192" class="header-phone">(561) 555-0192</a>
+            <a href="tel:+13054192231" class="header-phone">(305) 419-2231</a>
             <a href="#contact" class="btn btn-primary">Request Consultation</a>
         </div>
     </header>
@@ -745,7 +827,7 @@ max-width: 1300px;
             </ul>
             <div class="hero-ctas">
                 <a href="#contact" class="btn btn-primary">View Services</a>
-                <a href="tel:+15615550192" class="btn btn-secondary">Call (561) 555-0192</a>
+                <a href="tel:+13054192231" class="btn btn-secondary">Call (305) 419-2231</a>
             </div>
         </div>
         <div class="hero-panel hero-commercial">
@@ -767,77 +849,102 @@ max-width: 1300px;
 
     <section id="services" class="services">
         <div class="container">
+            <span class="section-label">REF_03 // SERVICES</span>
             <h2>Our Capabilities</h2>
-            <div class="services-grid">
-                <div class="division-group">
-                    <h3 class="division-header">DIV_01 — Residential Condo Remodeling</h3>
-                    <article class="service-card">
-                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="Kitchen renovation in South Florida condominium">
-                        <!-- SWAP: real photo -->
-                        <div class="service-card-content">
-                            <h4>Kitchen Renovation</h4>
-                            <p>Custom cabinetry, countertops, appliance installation</p>
-                        </div>
-                    </article>
-                    <article class="service-card">
-                        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=400&fit=crop" alt="Bathroom remodeling project">
-                        <!-- SWAP: real photo -->
-                        <div class="service-card-content">
-                            <h4>Bathroom Remodeling</h4>
-                            <p>Tile work, fixtures, glass enclosures, waterproofing</p>
-                        </div>
-                    </article>
-                    <article class="service-card">
-                        <img src="https://images.unsplash.com/photo-1622126807280-9b5b32b22e40?w=600&h=400&fit=crop" alt="Flooring installation">
-                        <!-- SWAP: real photo -->
-                        <div class="service-card-content">
-                            <h4>Flooring</h4>
-                            <p>Porcelain, hardwood, LVP, marble, and stone</p>
-                        </div>
-                    </article>
+            <div class="capabilities-grid">
+                <div class="capability-division">
+                    <h3 class="division-header"><span class="div-tag">DIV_01</span> Residential Condo Remodeling</h3>
+                    <ol class="capability-list">
+                        <li>
+                            <span class="cap-num">01</span>
+                            <div class="cap-info">
+                                <h4>Kitchen Renovation</h4>
+                                <p>Custom cabinetry, countertops, appliance installation</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="cap-num">02</span>
+                            <div class="cap-info">
+                                <h4>Bathroom Remodeling</h4>
+                                <p>Tile work, fixtures, glass enclosures, waterproofing</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="cap-num">03</span>
+                            <div class="cap-info">
+                                <h4>Flooring</h4>
+                                <p>Porcelain, hardwood, LVP, marble, and stone</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="cap-num">04</span>
+                            <div class="cap-info">
+                                <h4>Full Unit Renovation</h4>
+                                <p>Complete interior transformation, permitting, design coordination</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="cap-num">05</span>
+                            <div class="cap-info">
+                                <h4>Painting &amp; Finishes</h4>
+                                <p>Interior painting, crown molding, accent walls</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="cap-num">06</span>
+                            <div class="cap-info">
+                                <h4>Impact Windows &amp; Doors</h4>
+                                <p>Hurricane-rated window and slider installation</p>
+                            </div>
+                        </li>
+                    </ol>
                 </div>
-                <div class="division-group">
-                    <h3 class="division-header">DIV_02 — Commercial Restoration</h3>
-                    <article class="service-card">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop" alt="Waterproofing application on building exterior">
-                        <!-- SWAP: real photo -->
-                        <div class="service-card-content">
-                            <h4><a href="waterproofing.html">Waterproofing</a></h4>
-                            <p>Elastomeric coatings, below-grade waterproofing systems</p>
-                        </div>
-                    </article>
-                    <article class="service-card">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112c4e5190?w=600&h=400&fit=crop" alt="Concrete restoration work on commercial building">
-                        <!-- SWAP: real photo -->
-                        <div class="service-card-content">
-                            <h4><a href="concrete-restoration.html">Concrete Restoration</a></h4>
-                            <p>Spall repair, rebar treatment, 4,000+ PSI structural concrete</p>
-                        </div>
-                    </article>
-                    <article class="service-card">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop" alt="Stucco repair on building facade">
-                        <!-- SWAP: real photo -->
-                        <div class="service-card-content">
-                            <h4><a href="stucco-repair.html">Stucco Repair</a></h4>
-                            <p>Crack remediation, full stucco re-application, EIFS systems</p>
-                        </div>
-                    </article>
-                    <article class="service-card">
-                        <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=600&h=400&fit=crop" alt="Protective coatings being applied to concrete">
-                        <!-- SWAP: real photo -->
-                        <div class="service-card-content">
-                            <h4><a href="protective-coatings.html">Protective Coatings</a></h4>
-                            <p>Anti-carbonation, silane/siloxane sealers, traffic coatings</p>
-                        </div>
-                    </article>
-                    <article class="service-card">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop" alt="Balcony restoration project">
-                        <!-- SWAP: real photo -->
-                        <div class="service-card-content">
-                            <h4><a href="balcony-restoration.html">Balcony Restoration</a></h4>
-                            <p>Deck coating, railing repair, slope correction</p>
-                        </div>
-                    </article>
+                <div class="capability-division">
+                    <h3 class="division-header"><span class="div-tag">DIV_02</span> Commercial Restoration</h3>
+                    <ol class="capability-list">
+                        <li>
+                            <span class="cap-num">01</span>
+                            <div class="cap-info">
+                                <h4><a href="waterproofing.html">Waterproof Painting</a></h4>
+                                <p>Elastomeric coatings, below-grade waterproofing systems</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="cap-num">02</span>
+                            <div class="cap-info">
+                                <h4><a href="concrete-restoration.html">Concrete Restoration</a></h4>
+                                <p>Spall repair, rebar treatment, 4,000+ PSI structural concrete</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="cap-num">03</span>
+                            <div class="cap-info">
+                                <h4><a href="stucco-repair.html">Stucco Repair</a></h4>
+                                <p>Crack remediation, full stucco re-application, EIFS systems</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="cap-num">04</span>
+                            <div class="cap-info">
+                                <h4><a href="protective-coatings.html">Protective Coatings</a></h4>
+                                <p>Anti-carbonation, silane/siloxane sealers, traffic coatings</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="cap-num">05</span>
+                            <div class="cap-info">
+                                <h4>Expansion Joint Repair</h4>
+                                <p>Joint sealant replacement, Tremco and Sika systems</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="cap-num">06</span>
+                            <div class="cap-info">
+                                <h4><a href="balcony-restoration.html">Balcony Restoration</a></h4>
+                                <p>Deck coating, railing repair, slope correction</p>
+                            </div>
+                        </li>
+                    </ol>
                 </div>
             </div>
         </div>
@@ -913,7 +1020,7 @@ max-width: 1300px;
             <div class="portfolio-grid">
                 <article class="project-card">
                     <span class="category-badge">Commercial</span>
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop" alt="Commercial concrete restoration project in Southeast Florida" loading="lazy" decoding="async" width="600" height="400">
+                    <img src="https://seacoast-construction.lovable.app/assets/project-1-STWz7Cve.jpg" alt="Oceanfront tower concrete restoration project in Southeast Florida" loading="lazy" decoding="async" width="600" height="400">
                     <!-- SWAP: real photo -->
                     <div class="project-card-content">
                         <h3>Office Complex Restoration</h3>
@@ -922,7 +1029,7 @@ max-width: 1300px;
                 </article>
                 <article class="project-card">
                     <span class="category-badge">Residential</span>
-                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop" alt="Residential concrete restoration project in Southeast Florida" loading="lazy" decoding="async" width="600" height="400">
+                    <img src="https://seacoast-construction.lovable.app/assets/project-2-DTlP_t4h.jpg" alt="Luxury condo unit remodel in Southeast Florida" loading="lazy" decoding="async" width="600" height="400">
                     <!-- SWAP: real photo -->
                     <div class="project-card-content">
                         <h3>Waterfront Condominium</h3>
@@ -931,7 +1038,7 @@ max-width: 1300px;
                 </article>
                 <article class="project-card">
                     <span class="category-badge">Waterfront</span>
-                    <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?w=600&h=400&fit=crop" alt="Waterfront concrete restoration project in Southeast Florida" loading="lazy" decoding="async" width="600" height="400">
+                    <img src="https://seacoast-construction.lovable.app/assets/project-3-DW10aY3S.jpg" alt="Beachside complex stucco restoration in Southeast Florida" loading="lazy" decoding="async" width="600" height="400">
                     <!-- SWAP: real photo -->
                     <div class="project-card-content">
                         <h3>Marina Deck Restoration</h3>
@@ -1039,7 +1146,7 @@ max-width: 1300px;
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>
-                <p><a href="tel:+15615550192">(561) 555-0192</a></p>
+                <p><a href="tel:+13054192231">(305) 419-2231</a></p>
                 <p><a href="mailto:info@seacoastconstruction.com">info@seacoastconstruction.com</a></p>
                 <p>Serving Miami-Dade, Broward, and Palm Beach Counties</p>
             </div>
