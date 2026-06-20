@@ -145,30 +145,84 @@ color: var(--white);
 display: none;
 }
 .hero {
-background: linear-gradient(135deg, rgba(11, 20, 38, 0.92), rgba(11, 20, 38, 0.85)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&h=900&fit=crop');
-background-size: cover;
-background-position: center;
-color: var(--white);
-padding: 6rem 2rem;
-text-align: center;
-<!-- SWAP: real photo of Seacoast Construction project -->
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 0;
+min-height: 80vh;
 }
-.hero h1 {
-font-size: 2.5rem;
-margin-bottom: 1.5rem;
+.hero-panel {
+position: relative;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+padding: 4rem 3rem;
+color: var(--white);
+overflow: hidden;
+}
+.hero-panel::before {
+content: '';
+position: absolute;
+top: 0; left: 0; right: 0; bottom: 0;
+background: linear-gradient(to top, rgba(11, 20, 38, 0.88), rgba(11, 20, 38, 0.3));
+z-index: 1;
+}
+.hero-panel > * {
+position: relative;
+z-index: 2;
+}
+.hero-residential {
+background: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&h=1200&fit=crop') center/cover;
+}
+<!-- SWAP: real photo of residential condo remodeling project -->
+.hero-commercial {
+background: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&h=1200&fit=crop') center/cover;
+}
+<!-- SWAP: real photo of commercial restoration project -->
+.hero-label {
+font-size: 0.75rem;
+letter-spacing: 3px;
+text-transform: uppercase;
+opacity: 0.7;
+margin-bottom: 0.5rem;
+}
+.hero-panel h1 {
+font-size: 2.2rem;
+margin-bottom: 1rem;
 line-height: 1.2;
 }
-.hero p {
-font-size: 1.1rem;
-max-width: 800px;
-margin: 0 auto 2rem;
+.hero-panel p {
+font-size: 1rem;
+margin-bottom: 1.5rem;
 opacity: 0.9;
+max-width: 400px;
+}
+.hero-services {
+list-style: none;
+margin-bottom: 2rem;
+}
+.hero-services li {
+padding: 0.3rem 0;
+font-size: 0.95rem;
+opacity: 0.85;
+}
+.hero-services li::before {
+content: '* ';
+opacity: 0.5;
 }
 .hero-ctas {
 display: flex;
 gap: 1rem;
-justify-content: center;
 flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+.hero {
+grid-template-columns: 1fr;
+min-height: auto;
+}
+.hero-panel {
+min-height: 50vh;
+padding: 3rem 2rem;
+}
 }
 .services {
 padding: 5rem 2rem;
@@ -189,9 +243,66 @@ color: #666;
 .services-grid {
 display: grid;
 grid-template-columns: 1fr;
-gap: 2rem;
+gap: 3rem;
 max-width: 1200px;
 margin: 0 auto;
+}
+.division-group {
+background: var(--white);
+border-radius: 12px;
+padding: 2rem;
+box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.division-header {
+font-size: 0.8rem;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(--blue);
+margin-bottom: 1.5rem;
+padding-bottom: 0.75rem;
+border-bottom: 2px solid var(--light-gray);
+}
+.service-card {
+background: var(--white);
+border-radius: 8px;
+overflow: hidden;
+box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+transition: transform 0.3s, box-shadow 0.3s;
+margin-bottom: 1rem;
+display: flex;
+flex-direction: row;
+align-items: center;
+}
+.service-card:hover {
+transform: translateY(-2px);
+box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+.service-card img {
+width: 120px;
+height: 90px;
+object-fit: cover;
+flex-shrink: 0;
+}
+.service-card-content {
+padding: 1rem 1.5rem;
+}
+.service-card-content h4 {
+color: var(--navy);
+margin-bottom: 0.25rem;
+font-size: 1rem;
+}
+.service-card-content h4 a {
+color: var(--blue);
+}
+.service-card-content p {
+color: #666;
+font-size: 0.9rem;
+margin: 0;
+}
+@media (min-width: 768px) {
+.services-grid {
+grid-template-columns: 1fr 1fr;
+}
 }
 .service-card {
 background: var(--white);
@@ -622,75 +733,112 @@ max-width: 1300px;
     </header>
 
     <section id="hero" class="hero">
-        <div class="container">
-            <h1>Concrete Restoration South Florida</h1>
-            <p>Professional concrete restoration, waterproofing, and protective coating services for commercial properties, condominiums, and waterfront buildings across Miami-Dade, Broward, and Palm Beach counties.</p>
+        <div class="hero-panel hero-residential">
+            <span class="hero-label">DIV_01 // RESIDENTIAL</span>
+            <h1>Condo Remodeling</h1>
+            <p>Full-service interior renovation for luxury condominiums. Kitchens, bathrooms, flooring, and complete unit transformations.</p>
+            <ul class="hero-services">
+                <li>Kitchen Renovation</li>
+                <li>Bathroom Remodel</li>
+                <li>Flooring</li>
+                <li>Custom Cabinetry</li>
+            </ul>
             <div class="hero-ctas">
-                <a href="#contact" class="btn btn-primary">Request Free Consultation</a>
+                <a href="#contact" class="btn btn-primary">View Services</a>
                 <a href="tel:+15615550192" class="btn btn-secondary">Call (561) 555-0192</a>
+            </div>
+        </div>
+        <div class="hero-panel hero-commercial">
+            <span class="hero-label">DIV_02 // COMMERCIAL</span>
+            <h1>Restoration Services</h1>
+            <p>Waterproofing, concrete restoration, stucco repair, and high-performance coatings for commercial and multi-family structures.</p>
+            <ul class="hero-services">
+                <li>Waterproofing</li>
+                <li>Concrete Restoration</li>
+                <li>Stucco Repair</li>
+                <li>Protective Coatings</li>
+            </ul>
+            <div class="hero-ctas">
+                <a href="#services" class="btn btn-primary">View Services</a>
+                <a href="#contact" class="btn btn-secondary">Request Consultation</a>
             </div>
         </div>
     </section>
 
     <section id="services" class="services">
         <div class="container">
-            <h2>Our Services</h2>
-            <p>Comprehensive exterior restoration services tailored to South Florida's unique climate and building requirements.</p>
+            <h2>Our Capabilities</h2>
             <div class="services-grid">
-                <article class="service-card">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112c4e5190?w=600&h=400&fit=crop" alt="Concrete restoration work on commercial building" loading="lazy" decoding="async" width="600" height="400">
-                    <!-- SWAP: real photo -->
-                    <div class="service-card-content">
-                        <h3>Concrete Restoration</h3>
-                        <p>Expert concrete repair, spalling restoration, and structural rehabilitation for commercial buildings and condominiums.</p>
-                        <a href="concrete-restoration.html">Learn More &rarr;</a>
-                    </div>
-                </article>
-                <article class="service-card">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop" alt="Waterproofing application on building exterior" loading="lazy" decoding="async" width="600" height="400">
-                    <!-- SWAP: real photo -->
-                    <div class="service-card-content">
-                        <h3>Waterproofing</h3>
-                        <p>Elastomeric coatings, below-grade waterproofing systems, and joint sealing to protect your property from moisture intrusion.</p>
-                        <a href="waterproofing.html">Learn More &rarr;</a>
-                    </div>
-                </article>
-                <article class="service-card">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop" alt="Stucco repair on building facade" loading="lazy" decoding="async" width="600" height="400">
-                    <!-- SWAP: real photo -->
-                    <div class="service-card-content">
-                        <h3>Stucco Repair</h3>
-                        <p>Crack remediation, stucco re-application, and EIFS system repair to restore your building's exterior.</p>
-                        <a href="stucco-repair.html">Learn More &rarr;</a>
-                    </div>
-                </article>
-                <article class="service-card">
-                    <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=600&h=400&fit=crop" alt="Protective coatings being applied to concrete" loading="lazy" decoding="async" width="600" height="400">
-                    <!-- SWAP: real photo -->
-                    <div class="service-card-content">
-                        <h3>Protective Coatings</h3>
-                        <p>Anti-carbonation coatings, silane/siloxane sealers, and traffic coatings for long-lasting concrete protection.</p>
-                        <a href="protective-coatings.html">Learn More &rarr;</a>
-                    </div>
-                </article>
-                <article class="service-card">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop" alt="Balcony restoration project" loading="lazy" decoding="async" width="600" height="400">
-                    <!-- SWAP: real photo -->
-                    <div class="service-card-content">
-                        <h3>Balcony Restoration</h3>
-                        <p>Deck coating, railing repairs, slope correction, and waterproofing for safe, beautiful balconies.</p>
-                        <a href="balcony-restoration.html">Learn More &rarr;</a>
-                    </div>
-                </article>
-                <article class="service-card">
-                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&h=400&fit=crop" alt="Commercial painting services" loading="lazy" decoding="async" width="600" height="400">
-                    <!-- SWAP: real photo -->
-                    <div class="service-card-content">
-                        <h3>Painting</h3>
-                        <p>Commercial painting, waterproof coatings, and elastomeric finishes for buildings of all sizes.</p>
-                        <a href="painting.html">Learn More &rarr;</a>
-                    </div>
-                </article>
+                <div class="division-group">
+                    <h3 class="division-header">DIV_01 — Residential Condo Remodeling</h3>
+                    <article class="service-card">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="Kitchen renovation in South Florida condominium">
+                        <!-- SWAP: real photo -->
+                        <div class="service-card-content">
+                            <h4>Kitchen Renovation</h4>
+                            <p>Custom cabinetry, countertops, appliance installation</p>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=400&fit=crop" alt="Bathroom remodeling project">
+                        <!-- SWAP: real photo -->
+                        <div class="service-card-content">
+                            <h4>Bathroom Remodeling</h4>
+                            <p>Tile work, fixtures, glass enclosures, waterproofing</p>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://images.unsplash.com/photo-1622126807280-9b5b32b22e40?w=600&h=400&fit=crop" alt="Flooring installation">
+                        <!-- SWAP: real photo -->
+                        <div class="service-card-content">
+                            <h4>Flooring</h4>
+                            <p>Porcelain, hardwood, LVP, marble, and stone</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="division-group">
+                    <h3 class="division-header">DIV_02 — Commercial Restoration</h3>
+                    <article class="service-card">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop" alt="Waterproofing application on building exterior">
+                        <!-- SWAP: real photo -->
+                        <div class="service-card-content">
+                            <h4><a href="waterproofing.html">Waterproofing</a></h4>
+                            <p>Elastomeric coatings, below-grade waterproofing systems</p>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112c4e5190?w=600&h=400&fit=crop" alt="Concrete restoration work on commercial building">
+                        <!-- SWAP: real photo -->
+                        <div class="service-card-content">
+                            <h4><a href="concrete-restoration.html">Concrete Restoration</a></h4>
+                            <p>Spall repair, rebar treatment, 4,000+ PSI structural concrete</p>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop" alt="Stucco repair on building facade">
+                        <!-- SWAP: real photo -->
+                        <div class="service-card-content">
+                            <h4><a href="stucco-repair.html">Stucco Repair</a></h4>
+                            <p>Crack remediation, full stucco re-application, EIFS systems</p>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=600&h=400&fit=crop" alt="Protective coatings being applied to concrete">
+                        <!-- SWAP: real photo -->
+                        <div class="service-card-content">
+                            <h4><a href="protective-coatings.html">Protective Coatings</a></h4>
+                            <p>Anti-carbonation, silane/siloxane sealers, traffic coatings</p>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop" alt="Balcony restoration project">
+                        <!-- SWAP: real photo -->
+                        <div class="service-card-content">
+                            <h4><a href="balcony-restoration.html">Balcony Restoration</a></h4>
+                            <p>Deck coating, railing repair, slope correction</p>
+                        </div>
+                    </article>
+                </div>
             </div>
         </div>
     </section>
