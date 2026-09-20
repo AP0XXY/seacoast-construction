@@ -10,7 +10,32 @@
 
     <style>
         :root{--navy:#0b1426;--blue:#2f80ed;--white:#ffffff;--light-gray:#f0f4f8;--text-dark:#333333}*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,Helvetica,sans-serif;color:var(--text-dark);line-height:1.6}a{text-decoration:none;color:inherit}.container{max-width:1200px;margin:0 auto;padding:0 2rem}header{position:sticky;top:0;z-index:1000;background-color:var(--navy);color:var(--white);padding:1rem 2rem}.header-inner{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto}.logo{font-size:1.5rem;font-weight:bold;color:var(--white)}nav{display:flex;align-items:center;gap:2rem}.nav-links{display:flex;list-style:none;gap:1.5rem}.nav-links a{color:var(--white);opacity:0.9;transition:opacity 0.3s}.nav-links a:hover{opacity:1}.hamburger{display:none;font-size:1.5rem;cursor:pointer;color:var(--white)}.nav-toggle{display:none}.header-phone{color:var(--white);font-weight:bold;white-space:nowrap}.btn{display:inline-block;padding:0.75rem 1.5rem;border-radius:6px;font-weight:bold;transition:all 0.3s;text-align:center}.btn-primary{background-color:var(--blue);color:var(--white)}.btn-primary:hover{background-color:#1a6dd1;transform:translateY(-1px)}.btn-secondary{background-color:transparent;color:var(--white);border:2px solid var(--white)}.btn-secondary:hover{background-color:var(--white);color:var(--navy)}footer{background-color:var(--navy);color:var(--white);padding:3rem 2rem 1rem}.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:1200px;margin:0 auto}.footer-col h4{margin-bottom:1rem;font-size:1.1rem}.footer-col p{opacity:0.8;font-size:0.9rem}.footer-links{list-style:none}.footer-links li{margin-bottom:0.5rem}.footer-links a{opacity:0.8;font-size:0.9rem;transition:opacity 0.3s}.footer-links a:hover{opacity:1}.footer-bottom{text-align:center;padding-top:2rem;margin-top:2rem;border-top:1px solid rgba(255,255,255,0.1);font-size:0.85rem;opacity:0.7}.error-404{padding:6rem 2rem;text-align:center;background-color:var(--light-gray)}.error-404 h1{font-size:4rem;color:var(--navy);margin-bottom:1rem}.error-404 p{font-size:1.2rem;color:#666;max-width:600px;margin:0 auto 2rem}.error-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}.error-links{max-width:400px;margin:0 auto}.error-links h3{color:var(--navy);margin-bottom:1rem}.error-links ul{list-style:none}.error-links li{margin-bottom:0.5rem}.error-links a{color:var(--blue);font-weight:bold}@media(max-width:768px){.hamburger{display:block}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem 2rem;gap:1rem}.nav-toggle:checked~nav .nav-links{display:flex}.header-phone{display:none}.footer-grid{grid-template-columns:1fr}.error-404{padding:4rem 1rem}.error-404 h1{font-size:2.5rem}}@media(min-width:1024px){.container{max-width:1200px}}@media(min-width:1440px){.container{max-width:1300px}}
-    </style>
+    
+.has-dropdown{position:relative}
+.has-dropdown>a{display:inline-flex;align-items:center;gap:.35rem}
+.caret{font-size:.7em;line-height:1;transition:transform .2s}
+.has-dropdown:hover>a .caret,.has-dropdown:focus-within>a .caret{transform:rotate(180deg)}
+.dropdown{display:none;position:absolute;top:100%;left:0;min-width:15rem;list-style:none;margin:0;padding:.5rem 0;background:var(--white);border-top:3px solid var(--blue);box-shadow:0 10px 30px rgba(11,20,38,.14);z-index:200}
+.has-dropdown:hover>.dropdown,.has-dropdown:focus-within>.dropdown{display:block}
+.dropdown li{display:block}
+.dropdown a{display:block;padding:.6rem 1.15rem;white-space:nowrap;font-size:.8rem;color:var(--navy)}
+.dropdown a:hover,.dropdown a:focus{background:rgba(47,128,237,.08);color:var(--blue)}
+@media (max-width:1023px){
+.has-dropdown>a .caret{display:none}
+.dropdown{display:block;position:static;min-width:0;padding:.35rem 0 .35rem .9rem;border-top:0;border-left:2px solid var(--blue);box-shadow:none;background:transparent}
+.dropdown a{padding:.4rem 0;color:inherit}
+}
+
+@media (max-width:1023px){
+.nav-links{background-color:var(--navy)}
+.nav-links>li>a{color:#fff}
+.nav-links>li>a:hover,.nav-links>li>a:focus{color:#fff;opacity:.75}
+.dropdown{border-left-color:rgba(255,255,255,.28)}
+.dropdown a{color:rgba(255,255,255,.72)}
+.dropdown a:hover,.dropdown a:focus{color:#fff;background:transparent}
+.dropdown a.nav-active{color:#fff}
+}
+</style>
 </head>
 <body>
     <header>
@@ -21,12 +46,19 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="concrete-restoration.html">Concrete Restoration</a></li>
-                    <li><a href="waterproofing.html">Waterproofing</a></li>
-                    <li><a href="stucco-repair.html">Stucco Repair</a></li>
-                    <li><a href="protective-coatings.html">Protective Coatings</a></li>
-                    <li><a href="balcony-restoration.html">Balcony Restoration</a></li>
-                    <li><a href="painting.html">Painting</a></li>
+                    <li class="has-dropdown">
+                        <a href="index.html#services">Services <span class="caret" aria-hidden="true">&#9662;</span></a>
+                        <ul class="dropdown">
+                            <li><a href="concrete-restoration.html">Concrete Restoration</a></li>
+                            <li><a href="waterproofing.html">Waterproofing</a></li>
+                            <li><a href="stucco-repair.html">Stucco Repair</a></li>
+                            <li><a href="protective-coatings.html">Protective Coatings</a></li>
+                            <li><a href="balcony-restoration.html">Balcony Restoration</a></li>
+                            <li><a href="painting.html">Painting</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#portfolio">Projects</a></li>
+                    <li><a href="index.html#why-choose-us">Why Us</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </nav>
